@@ -4,6 +4,16 @@ author: Chris Lee
 created: 10/27/2013
 */
 
+/*Main Holder*/
+#holder {
+	left:30%;
+}
+
+/*Center Body*/
+#body {
+	float:left;
+	width:270px;
+}
 
 /*Profile Picture*/
 #profile{
@@ -11,14 +21,29 @@ created: 10/27/2013
 	border-color:#000000;
 	border-width:5px;
 	width:100%;
-	margin-left:auto;
-	margin-right:auto;
 }
 
-#body {
-	margin-right: auto;
-	margin-left: auto;
-	width:400px;
+/*Connect Panel*/
+#connect {
+	margin-top:155px;
+	float:left;
+}
+
+/*Bio Panel*/
+#bio {
+	line-height:2em;
+	float:left;
+	margin-top:145px;
+	margin-left:35px;
+	font-family:"Quicksand";
+}
+
+/*Connect Icons*/
+.icon {
+	width:90px;
+	height:auto;
+	margin-right:20px;
+	margin-top: 5px;
 }
 
 h1.name {
