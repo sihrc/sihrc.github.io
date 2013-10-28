@@ -4,6 +4,7 @@
 
 
 //Gets the height of the window
+// does not use jquery $(window).height() because jquery does not return the right height
 function getWindowHeight(){
 	var winH = 460;
 	if (document.body && document.body.offsetWidth) {
@@ -22,15 +23,20 @@ function getWindowHeight(){
 
 //Set the position of the footer
 function setBottomBar(){
-	var footer = document.getElementById("footerbar");
-	footer.style.top = getWindowHeight() - footer.offsetHeight - 20;
+	//Projected Footer Position
+	var footerHeight = getWindowHeight() - $('#footerbar').height() - 20;
+	//Content Position
+	var profileHeight = $('#profile').height() + $('#profile').offset().top + 30;
+	//Choosing which to use
+	if (footerHeight > profileHeight)
+		$('#footerbar').offset({left:0,top:footerHeight});
+	else 
+		$('#footerbar').offset({left:0,top:profileHeight});
 }
 
 //Set the holder alignment
 function setHolder(){
-	var dividor = document.getElementById("dividor");
-	var holder = document.getElementById("holder");
-	dividor.style.width = holder.style.width;
+	$('#dividor').width(.6*$('#holder').width());
 }
 
 //What to run when document is ready
@@ -39,9 +45,9 @@ $(document).ready(function(){
 	setHolder();
 });
 
-$(document).resize(function(){
+$(window).resize(function(){
 	setBottomBar();
-})
+});
 
 
 
