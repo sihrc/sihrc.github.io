@@ -4,11 +4,30 @@ author: Chris Lee
 created: 10/27/2013
 */
 
-/*Main Holder*/
+
+/*Main*/
+#main {
+	position:absolute;
+	width:100%;
+	height:1000;
+}
+
+/*Holder*/
 #holder {
+	position:relative;
+	width:700px;
+	top:0;
+	left:30%;
+}
+
+/*Dividor between Title and Body*/
+#dividor {
 	margin-left:auto;
 	margin-right:auto;
-	width:700px;
+	height:2px;
+	width:400px;
+	margin-bottom:20px;
+	background:#000000;
 }
 
 /*Center Body*/
@@ -27,7 +46,6 @@ created: 10/27/2013
 
 /*Connect Panel*/
 #connect {
-	margin-top:130px;
 	margin-right:20px;
 	float:left;
 }
@@ -36,21 +54,37 @@ created: 10/27/2013
 #bio {
 	line-height:2em;
 	float:left;
-	margin-top:130px;
 	margin-left:35px;
 	font-family:"Quicksand";
+}
+
+/*bottom footer bar*/
+#footerbar {
+	height:50px;
+	width:100%;
+	line-height: 1.75em;
+	clear:both;
+	position:absolute;
+	padding:5px;
+	vertical-align: middle;
+	text-align: center;
+	font-family:"Raleway";
+	background:#000000;
+	color:#FFFFFF;
+	font-size: 20pt;
+	font-weight:bold;
 }
 
 /*Connect Icons*/
 .icon {
 	width:90px;
 	height:auto;
-	margin-top: 5px;
 }
 
+/*Name*/
 h1.name {
 	text-align: center;
-	line-height: .5em;
+	line-height: .01em;
 	font-size:60px;
 	font-family:"Raleway";
 }

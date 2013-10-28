@@ -3,34 +3,45 @@
 // created: 10/28/2013
 
 
-// Dynamically Resize Body and Holder
-void resizeDivs(){
-	var body = $("#body");
-	var profile = $("#profile")
-	var bio = $("#bio");
-	var connect = $("#connect");
-	var holder = $("#holder");
-
-	//Setting the height of the holder
-	while (connect.position().top > profile.position().top){
-		body.width(body.width() + 10);
-		holder.width(holder.width() + 10);
+//Gets the height of the window
+function getWindowHeight(){
+	var winH = 460;
+	if (document.body && document.body.offsetWidth) {
+		winH = document.body.offsetHeight;
 	}
-
-	//Check to see if bio and connect and profile pic are at the same height
-	while (bio.position().top != connect.position().top){
-		body.width(body.width() + 10);
-		holder.width(holder.width() + 10);
-	}	
-
-	holder.width(bio.width() + connect.width() + body.width());
+	if (document.compatMode=='CSS1Compat' &&
+		document.documentElement &&
+		document.documentElement.offsetWidth ) {
+		winH = document.documentElement.offsetHeight;
+	}
+	if (window.innerWidth && window.innerHeight) {
+		winH = window.innerHeight;
+	}
+	return winH;
 }
 
+//Set the position of the footer
+function setBottomBar(){
+	var footer = document.getElementById("footerbar");
+	footer.style.top = getWindowHeight() - footer.offsetHeight - 20;
+}
+
+//Set the holder alignment
+function setHolder(){
+	var dividor = document.getElementById("dividor");
+	var holder = document.getElementById("holder");
+	dividor.style.width = holder.style.width;
+}
 
 //What to run when document is ready
 $(document).ready(function(){
-	resizeDivs();
+	setBottomBar();
+	setHolder();
 });
+
+$(document).resize(function(){
+	setBottomBar();
+})
 
 
 
