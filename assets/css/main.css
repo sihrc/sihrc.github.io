@@ -8,13 +8,13 @@ created: 10/27/2013
 #holder {
 	margin-left:auto;
 	margin-right:auto;
-	width:600px;
+	width:700px;
 }
 
 /*Center Body*/
 #body {
 	float:left;
-	width:270px;
+	width:300px;
 }
 
 /*Profile Picture*/
@@ -50,7 +50,7 @@ created: 10/27/2013
 
 h1.name {
 	text-align: center;
-	line-height: .8em;
+	line-height: .5em;
 	font-size:60px;
 	font-family:"Raleway";
 }
