@@ -78,6 +78,10 @@ created: 10/27/2013
 	font-weight:bold;
 }
 
+#projectcontent {
+	float:left;
+}
+
 /*Connect Icons*/
 .icon {
 	width:90px;
