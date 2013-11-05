@@ -36,26 +36,28 @@ function setBottomBar(){
 
 //Set Project Content
 function setProjectContent(){
-	var projectheight = $('#projects').offset().top + 70;
+	var projectheight = $('#projects').offset().top + 60;
 	$('#projectcontent').offset({left:0,top:projectheight});
 }
 //Set the holder alignment
 function setHolder(){
 	$('#dividor').width(.6*$('#holder').width());
 }
-
+//Scroll to the projects
 function setProjectAnimation(){
-	$('#footerbar').click(function(e){
-		//Make Animation
+	$('#footerbar').click(function(){
+		$('html, body').animate({
+			scrollTop: $("#projects").offset().top
+		},200);
 	});
 }
 
 //What to run when document is ready
 $(document).ready(function(){
 	setBottomBar();
-	setProjectContent()
+	setProjectContent();
 	setHolder();
-	setProjectAnimation()
+	setProjectAnimation();
 });
 
 $(window).resize(function(){
