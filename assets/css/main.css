@@ -91,13 +91,43 @@ created: 10/27/2013
 /*Project Content Dividor*/
 .content-dividor {
 	background-color: #ffffff;
-	height:3px;
+	height:2px;
+	margin:0 80 4 80;
+	width:auto;
 }
 
 /*Connect Icons*/
 .icon {
 	width:90px;
 	height:auto;
+	z-index:1;
+}
+
+/*Project Logo*/
+.project-logo {
+	height:50px;
+	position:relative;
+}
+
+/*Div Block*/
+#block-remaining {
+	background-color: #000000;
+	z-index:2;
+}
+
+/*Arrow Buttons*/
+.arrow-buttons {
+	height:30px;
+	padding:10px;
+}
+
+#left-button {
+	position:absolute;
+}
+
+#right-button{
+	position:absolute;
+	z-index:3;
 }
 
 /*Name*/

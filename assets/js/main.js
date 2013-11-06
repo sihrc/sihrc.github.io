@@ -52,16 +52,50 @@ function setProjectAnimation(){
 	});
 }
 
+//Initially position the logos
+function positionLogos(){
+	var numLogos = 4;
+	var dividorMargin = 80;
+	if (numLogos < 8){
+		for (var i=2; i<=numLogos;i++){
+			dividorMargin = dividorMargin + $("#logo" + i).width() + 15;
+		}
+	}
+	var buttonOffset = dividorMargin - 60;
+	$('.content-dividor').css("margin","0 " + dividorMargin + " 4 " + dividorMargin);
+	$('#left-button').offset({left:buttonOffset});
+	$('#right-button').offset({left:$(window).width() - buttonOffset - $('#right-button').outerWidth()});
+
+	var firstOffset = buttonOffset + $('#left-button').width() + 30;
+	
+	$('#logo1').offset({left:firstOffset});
+	for (var i=2;i<=numLogos;i++){
+		var prevLogo = "#logo" + (i - 1);
+		var curLogo = "#logo" + i;
+		var nextOffset = $(prevLogo).offset().left + $(prevLogo).width() + 15;
+		if ((nextOffset + $(curLogo).width()) > ($('#right-button').offset().left - 10)){
+			for (var n = i; n<= numLogos; n++){
+				$("#logo" + i).hide();	
+			}
+		}
+		$(curLogo).offset({left:nextOffset})
+	}
+}
+
 //What to run when document is ready
-$(document).ready(function(){
+$(window).load(function(){
 	setBottomBar();
 	setProjectContent();
 	setHolder();
 	setProjectAnimation();
+	positionLogos();
 });
 
 $(window).resize(function(){
 	setBottomBar();
+	setProjectContent();
+	setHolder();
+	setProjectAnimation();
 });
 
 
