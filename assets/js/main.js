@@ -73,13 +73,27 @@ function positionLogos(){
 		var prevLogo = "#logo" + (i - 1);
 		var curLogo = "#logo" + i;
 		var nextOffset = $(prevLogo).offset().left + $(prevLogo).width() + 15;
-		if ((nextOffset + $(curLogo).width()) > ($('#right-button').offset().left - 10)){
+		//if ((nextOffset + $(curLogo).width()) > ($('#right-button').offset().left - 10)){
+		if (nextOffset > ($('#right-button').offset().left - 10)){
 			for (var n = i; n<= numLogos; n++){
 				$("#logo" + i).hide();	
 			}
+			break;
 		}
 		$(curLogo).offset({left:nextOffset})
 	}
+
+	$('#block-right').offset({left:($('#right-button').offset().left - 10),top:$("#logo1").offset().top});
+	$('#block-right').width($(window).block() - $("block-right").offset().left);
+	$('#block-right').height($('#logo1').height());
+
+	$('#block-left').offset({left:$('#logo1').offset().left - 100,top:$("#logo1").offset().top});
+	$('#block-left').width($('#logo1').offset().left);
+	$('#block-left').height($('#logo1').height());
+}
+
+function setupLogoButtons(){
+	
 }
 
 //What to run when document is ready
@@ -88,7 +102,8 @@ $(window).load(function(){
 	setProjectContent();
 	setHolder();
 	setProjectAnimation();
-	positionLogos();
+/*	positionLogos();
+	setupLogoButtons();*/
 });
 
 $(window).resize(function(){

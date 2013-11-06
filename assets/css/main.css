@@ -81,17 +81,17 @@ created: 10/27/2013
 #projectcontent {
 	float:left;
 	width:100%;
-	background-color:#000000;
+	background-color:#efefef;
 	height:900px;
 	font-family:"Quicksand";
 	font-weight:bold;
-	color:#afafaf;
+	color:#000000;
 }
 
 /*Project Content Dividor*/
 .content-dividor {
-	background-color: #ffffff;
-	height:2px;
+	background-color: #000000;
+	height:3px;
 	margin:0 80 4 80;
 	width:auto;
 }
@@ -109,10 +109,19 @@ created: 10/27/2013
 	position:relative;
 }
 
+.logo {
+	text-decoration: none;
+}
+
 /*Div Block*/
-#block-remaining {
+.block-remaining {
+	height:50px;
+	width:100px;
+	position:absolute;
+	border-color:#000000;
+	border:10px;
 	background-color: #000000;
-	z-index:2;
+	z-index:3;
 }
 
 /*Arrow Buttons*/
@@ -136,4 +145,9 @@ h1.name {
 	line-height: .01em;
 	font-size:60px;
 	font-family:"Raleway";
+}
+
+.project-title {
+	margin:40 0 20 80;
+	line-height: .1em;
 }
