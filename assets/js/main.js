@@ -84,7 +84,7 @@ function positionLogos(){
 	}
 
 	$('#block-right').offset({left:($('#right-button').offset().left - 10),top:$("#logo1").offset().top});
-	$('#block-right').width($(window).block() - $("block-right").offset().left);
+	$('#block-right').width($(window).width() - $("block-right").offset().left);
 	$('#block-right').height($('#logo1').height());
 
 	$('#block-left').offset({left:$('#logo1').offset().left - 100,top:$("#logo1").offset().top});
@@ -92,12 +92,13 @@ function positionLogos(){
 	$('#block-left').height($('#logo1').height());
 }
 
-function setupLogoButtons(){
-	
+function centerMain(){
+	$('#main').offset({top:($(window).height() - $('#main').height())/2});
 }
 
 //What to run when document is ready
 $(window).load(function(){
+	centerMain();
 	setBottomBar();
 	setProjectContent();
 	setHolder();
