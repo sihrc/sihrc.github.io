@@ -4,19 +4,18 @@ author: Chris Lee
 created: 10/27/2013
 */
 
-/*Main*/
-#main {
+/*Profile Holder*/
+#holder {
 	position:absolute;
-	width:100%;
+	width:700px;
 }
 
-/*Holder*/
-#holder {
-	margin-left:auto;
-	margin-right:auto;
-	position:relative;
-	width:700px;
-	top:0;
+/*Name*/
+h1.name {
+	text-align: center;
+	line-height: .01em;
+	font-size:60px;
+	font-family:"Raleway";
 }
 
 /*Dividor between Title and Body*/
@@ -49,6 +48,13 @@ created: 10/27/2013
 	float:left;
 }
 
+/*Connect Icons*/
+.icon {
+	width:90px;
+	height:auto;
+	z-index:1;
+}
+
 /*Bio Panel*/
 #bio {
 	line-height:2em;
@@ -57,7 +63,7 @@ created: 10/27/2013
 	font-family:"Quicksand";
 }
 
-/*bottom footer bar*/
+/*Project Footer Bar*/
 #footerbar {
 	text-decoration: none;
 	height:50px;
@@ -86,38 +92,45 @@ created: 10/27/2013
 	font-weight:bold;
 	color:#000000;
 }
+
+/*Single Project Holder*/
 .single-project {
 	float:left;
 	width:100%;
+	padding-left:80;
+	padding-right:80;
 }
 
+/*Project Title*/
 .single-project .title {
-	margin:40 0 20 80;
 	line-height: .1em;
-
 }
 
-/*Project Content Dividor*/
+/*Project Divider*/
 .single-project .divider {
 	background-color: #000000;
+	width:100%;
 	height:3px;
-	margin:0 80 4 80;
-	width:auto;
+	padding-left:80;
+	padding-right:80;
 }
 
-.single-project .try {
-	float:right;
-	margin-right: 80;
-}
-
-/*Connect Icons*/
-.icon {
-	width:90px;
-	height:auto;
-	z-index:1;
+/*Project Description*/
+.single-project .description {
+	float:left;
 }
 
 /*Project Logo*/
+.single-project .project-logo {
+	float:right;
+	margin-right: 80;
+	padding-bottom: 50;
+}
+
+
+
+
+/**Slider
 .project-logo {
 	height:50px;
 	position:relative;
@@ -127,18 +140,6 @@ created: 10/27/2013
 	text-decoration: none;
 }
 
-/*Div Block*/
-.block-remaining {
-	height:50px;
-	width:100px;
-	position:absolute;
-	border-color:#000000;
-	border:10px;
-	background-color: #000000;
-	z-index:3;
-}
-
-/*Arrow Buttons*/
 .arrow-buttons {
 	height:30px;
 	padding:10px;
@@ -153,11 +154,14 @@ created: 10/27/2013
 	z-index:3;
 }
 
-/*Name*/
-h1.name {
-	text-align: center;
-	line-height: .01em;
-	font-size:60px;
-	font-family:"Raleway";
+.block-remaining {
+	height:50px;
+	width:100px;
+	position:absolute;
+	border-color:#000000;
+	border:10px;
+	background-color: #000000;
+	z-index:3;
 }
 
+*/

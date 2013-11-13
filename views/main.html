@@ -12,80 +12,82 @@
 <body>
 
 	<!-- CONTENT STARTS HERE -->
-	<div id = "main">
+	<div id = "holder">
 		<h1 class = "name"> Chris Lee </h1>
 		<div id = "dividor"></div>
-		<div id = "holder">
-			<!-- Social Media Connections -->
-			<div id = "connect">
-				<a href = "https://www.facebook.com/clhereis"><img class = "icon" src = "../assets/images/facebook.jpg" alt = "Facebook"/></a><br>
-				<a href = "https://github.com/sihrc"><img class = "icon" src = "../assets/images/github.jpg" alt = "Github"/></a><br>
-				<a href = "https://plus.google.com/103759915727068716345/posts"><img class = "icon" src = "../assets/images/google.jpg" alt = "Google"/></a><br>
-				<a href = "http://www.linkedin.com/pub/christopher-lee/76/136/a7b"><img class = "icon" src = "../assets/images/linked.jpg" alt = "LinkedIn"/></a>
-			</div>
+		<!-- Social Media Connections -->
+		<div id = "connect">
+			<a href = "https://www.facebook.com/clhereis"><img class = "icon" src = "../assets/images/facebook.jpg" alt = "Facebook"/></a><br>
+			<a href = "https://github.com/sihrc"><img class = "icon" src = "../assets/images/github.jpg" alt = "Github"/></a><br>
+			<a href = "https://plus.google.com/103759915727068716345/posts"><img class = "icon" src = "../assets/images/google.jpg" alt = "Google"/></a><br>
+			<a href = "http://www.linkedin.com/pub/christopher-lee/76/136/a7b"><img class = "icon" src = "../assets/images/linked.jpg" alt = "LinkedIn"/></a>
+		</div>
 
-			<!-- Name and Profile Picture -->
-			<div id = "body">
-				<img id = "profile" src = "../assets/images/profile.jpg"/>
-			</div>
+		<!-- Name and Profile Picture -->
+		<div id = "body">
+			<img id = "profile" src = "../assets/images/profile.jpg"/>
+		</div>
 
-			<!-- Bio and Passion Statement -->
-			<div id = "bio">
-				"Hi, I'm a  <br>
-				<strong>Software Engineer </strong>,				<br>
-				<strong>Project Manager </strong>,					<br>
-				and <strong>Designer</strong>						<br>
-				and my <strong>passion</strong> is 					<br>
-				<strong>furthering technology</strong>				<br>
-				to bring more 										<br>
-				<strong>meaning</strong> and <strong>value</strong>	<br>
-				to <strong>people.</strong>"						<br>
-				<br>
-				<a href = "../assets/content/ChrisLee_Resume.pdf"><img class = "icon" src = "../assets/images/resume.png"/></a>
-				<a href = "mailto:sihrcleewebsite.gmail.com"><img class = "icon" src = "../assets/images/contact.png"/></a>
-				<!-- Email: sihrcleewebsite@gmail.com -->
-			</div>
-		</div> <!-- Holder -->
+		<!-- Bio and Passion Statement -->
+		<div id = "bio">
+			"Hi, I'm a  <br>
+			<strong>Software Engineer </strong>,				<br>
+			<strong>Project Manager </strong>,					<br>
+			and <strong>Designer</strong>						<br>
+			and my <strong>passion</strong> is 					<br>
+			<strong>furthering technology</strong>				<br>
+			to bring more 										<br>
+			<strong>meaning</strong> and <strong>value</strong>	<br>
+			to <strong>people.</strong>"						<br>
+			<br>
+			<a href = "../assets/content/ChrisLee_Resume.pdf"><img class = "icon" src = "../assets/images/resume.png"/></a>
+			<a href = "mailto:sihrcleewebsite.gmail.com"><img class = "icon" src = "../assets/images/contact.png"/></a>
+			<!-- Email: sihrcleewebsite@gmail.com -->
+		</div>
+	</div> <!-- Holder -->
+	<div id = "projects">
+		<a href="" onclick="return false" id = "footerbar">
+			See My Projects!
+		</a>
 	</div>
-		<div id = "projects">
-			<a href="" onclick="return false" id = "footerbar">
-				See My Projects!
-			</a>
-		</div>
-		<div id = "projectcontent">
-			<div class = 'single-project'>
-				<h1 class = "title"> MyDish </h1>
-				<hr class = "divider">
-	  			<iframe class = "try" src='http://www.appsurfer.com/apps/42961-mydish/buttons/big_hz_v1' scrolling='no' frameborder='0' style='height:110px; width:320px;border:none;' data-domain='http://www.appsurfer.com'></iframe>
-			</div>	
-			<div class = 'single-project'>
-				<hr class = "divider">
-				<p align = "center">!! MORE UNDER CONSTRUCTION !!</p>
+	<div id = "projectcontent">
+		<div class = 'single-project'>
+			<h1 class = "title"> MyDish </h1>
+			<hr class = "divider">
+			<div class = "description">
+				Hi
 			</div>
-    		
+  			<iframe class = "project-logo" src='http://www.appsurfer.com/apps/42961-mydish/buttons/big_hz_v1' scrolling='no' frameborder='0' style='height:110px; width:320px;border:none;' data-domain='http://www.appsurfer.com'></iframe>
+
+		</div>	
+		<div class = 'single-project'>
+			<hr class = "divider">
+			<p align = "center">!! MORE UNDER CONSTRUCTION !!</p>
 		</div>
+		
+	</div>
 
 	<!-- CONTENT ENDS HERE -->
 
 	<!-- LOAD JAVASCRIPT HERE -->
 	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-	<script type='text/javascript' src='http://www.appsurfer.com/surf.js'></script>
 	<script language = "javascript" src = "../assets/js/main.js"></script>	
+	<script type='text/javascript' src='http://www.appsurfer.com/surf.js'></script>
 </body>
 </html>
 
 
 
-<!-- 			<hr class = "content-dividor">
-			<div id = "project-scroll">
-				<a href = "" onclick = "return false" class = "logo"><img src = "../assets/images/left.png" class = "arrow-buttons" id = "left-button"></a>
-				<div id = "block-left" class = "block-remaining"></div>
-				<a href = "" onclick = "return false" class = "logo"><img src = "../assets/images/example_logo.png" id = "logo1" class = "project-logo"></a>
-				<a href = "" onclick = "return false" class = "logo"><img src = "../assets/images/example_logo.png" id = "logo2" class = "project-logo"></a>
-				<a href = "" onclick = "return false" class = "logo"><img src = "../assets/images/example_logo.png" id = "logo3" class = "project-logo"></a>
-				<a href = "" onclick = "return false" class = "logo"><img src = "../assets/images/example_logo.png" id = "logo4" class = "project-logo"></a>
-				<div id = "block-right" class = "block-remaining"></div>
-				<a href = "" onclick = "return false" class = "logo"><img src = "../assets/images/right.png" class = "arrow-buttons" id = "right-button"></a>
-			</div>
-			<hr class = "content-dividor"> --> <!-- Project Slider -->
+<!-- <hr class = "content-dividor">
+	<div id = "project-scroll">
+		<a href = "" onclick = "return false" class = "logo"><img src = "../assets/images/left.png" class = "arrow-buttons" id = "left-button"></a>
+		<div id = "block-left" class = "block-remaining"></div>
+		<a href = "" onclick = "return false" class = "logo"><img src = "../assets/images/example_logo.png" id = "logo1" class = "project-logo"></a>
+		<a href = "" onclick = "return false" class = "logo"><img src = "../assets/images/example_logo.png" id = "logo2" class = "project-logo"></a>
+		<a href = "" onclick = "return false" class = "logo"><img src = "../assets/images/example_logo.png" id = "logo3" class = "project-logo"></a>
+		<a href = "" onclick = "return false" class = "logo"><img src = "../assets/images/example_logo.png" id = "logo4" class = "project-logo"></a>
+		<div id = "block-right" class = "block-remaining"></div>
+		<a href = "" onclick = "return false" class = "logo"><img src = "../assets/images/right.png" class = "arrow-buttons" id = "right-button"></a>
+	</div>
+	<hr class = "content-dividor"> --> <!-- Project Slider -->

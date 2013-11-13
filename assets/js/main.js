@@ -93,11 +93,16 @@ function positionLogos(){
 }
 
 function centerMain(){
-	$('#main').offset({top:($(window).height() - $('#main').height())/2});
+	var offset = ($(window).width() - $('#holder').width())/2;
+	if (offset <= 0){
+		offset = 0;
+	}
+	$('#holder').offset({left:offset});
+	//$('#main').offset({top:($(window).height() - $('#main').height())/2});
 }
 
 //What to run when document is ready
-$(window).load(function(){
+$(window).ready(function(){
 	centerMain();
 	setBottomBar();
 	setProjectContent();
@@ -108,6 +113,7 @@ $(window).load(function(){
 });
 
 $(window).resize(function(){
+	centerMain();
 	setBottomBar();
 	setProjectContent();
 	setHolder();
