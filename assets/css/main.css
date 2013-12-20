@@ -103,6 +103,7 @@ h1.name {
 /*Project Title*/
 .single-project .title {
 	line-height: .1em;
+	margin-top: 50px;
 }
 
 /*Project Divider*/
