@@ -1,0 +1,13 @@
+#sidebar {
+	float: left;
+	overflow: hidden;
+	margin-right: 20px;
+}
+
+#appImage {
+	width: 300px;
+}
+
+#right_content {
+	line-height:1.8em;
+}

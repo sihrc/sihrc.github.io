@@ -1,0 +1,39 @@
+.app-view {
+  height: auto;
+  margin: 20px auto;
+  width: 250px;
+}
+.app-view img {
+  width: 100%;
+}
+.app-view-left {
+  float: left;
+  height: auto;
+  margin: 20px auto;
+  width: 250px;
+}
+.app-view-left img {
+  width: 100%;
+}
+.app-view-right {
+  float: right;
+  height: auto;
+  margin: 20px auto;
+  width: 250px;
+}
+.app-view-right img {
+  width: 100%;
+}
+.double-app-view {
+  position: relative;
+  margin: 0 auto;
+  width: 510px;
+}
+.pproto-large {
+  height: auto;
+  margin: 20px auto;
+  width: 500px;
+}
+.pproto-large img {
+  width: 100%;
+}

@@ -1,0 +1,16 @@
+.app-screens {
+	margin: 20px 0;
+	text-align: center;
+}
+.app-screens img {
+	height: auto;
+	width: 225px;
+}
+.site-map {
+	margin: 20px 0;
+	text-align: center;
+}
+.site-map img {
+	height: auto;
+	width: 600px;
+}

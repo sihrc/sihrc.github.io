@@ -1,0 +1,81 @@
+.app-screens {
+	margin: 20px 0;
+	text-align: center;
+}
+.app-screens img {
+	height: auto;
+	width: 225px;
+}
+.design-idea {
+	margin: 20px 0;
+	text-align: center;
+}
+.design-idea img {
+	height: auto;
+	width: 600px;
+}
+.design-idea-ari {
+	margin: 20px 0;
+	text-align: center;
+}
+.design-idea-ari img {
+	height: auto;
+	width: 400px;
+}
+.design-idea-lisa {
+	margin: 20px 0;
+	text-align: center;
+}
+.design-idea-lisa img {
+	height: auto;
+	width: 275px;
+}
+.facebook-share {
+	margin: 20px 0;
+	position: relative;
+}
+.facebook1 {
+	float: left;
+	width: 50%;
+}
+.facebook1 img {
+	height: auto;
+	margin-left: 50%;
+	width: 50%;
+}
+.facebook2 {
+	float: left;
+	width: 50%;
+}
+.facebook2 img {
+	height: auto;
+	margin-left: 5%;
+	width: 45%;
+}
+.ideation-poster {
+	margin: 20px 0;
+	text-align: center;
+}
+.ideation-poster img {
+	height: auto;
+	width: 500px;
+}
+.task {
+	margin: 20px 0;
+	text-align: center;
+}
+.task img {
+	height: auto;
+	width: 650px;
+}
+.task-chris {
+	margin: 20px 0;
+	text-align: center;
+}
+.task-chris img {
+	height: auto;
+	width: 225px;
+}
+.text-section {
+	margin: 40px 0;
+}

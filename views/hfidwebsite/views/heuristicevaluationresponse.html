@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Team Nutmeg</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- The styles -->
+  <link href="../assets/css/bootstrap.css" rel="stylesheet">
+  <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+  <link href="../assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+  <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+      <![endif]-->
+
+
+</head>
+
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+  <div id="navbar"></div>
+  <!-- HTML Starts Here -->
+  <div class="jumbotron">
+    <h2> Heuristic Evaluation Response </h2>
+    <p> This page describes our responses to the Heuristic Evaluation review that our team mates completed on the first version of our myDish app. </p>
+  </div>
+
+  <div class="container">
+    <div class="starter-template text-section">
+      <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">Heuristic Evaluation Feedback and Responses</div>
+
+        <!-- Table -->
+        <table class="table">
+          <tr>
+            <td>Heuristic Feedback</td>
+            <td>Severity Rating</td>
+            <td>Response</td>
+          </tr>
+          <tr>
+            <td>The addEntry button on the homepage caused me to pause. I was not sure if an “entry” was a dish. Maybe rename to Add Dish or something?</td>
+            <td>2</td>
+            <td>Change "Add Entry" to "Add Dish". "Add Dish" specifically indicates dishes are being added, while Add Entry is a general statement in comparison.</td>
+          </tr>
+          <tr>
+            <td>Creating a dish with no name displays strangely and there is no validation on the form to make sure a name was entered</td>
+            <td>3</td>
+            <td>Fix error so that Dish can be added without title. It is possible users wouldn't feel like adding a title till later (especially if they're in a rush or tired) and come across this error.</td>
+          </tr>
+          <tr>
+            <td>When creating a new dish, it’s not obvious what the drop­down menu does until you click on it</td>
+            <td>3</td>
+            <td>Put a placeholder of “Categories” on the Add Entry page. This will notify users that selecting the "Categories" button will pull down categories.</td>
+          </tr>
+          <tr>
+            <td>When I was editing a recipe, I cleared the data in the recipe and the notes column. There was no label or placeholder text in these inputs and I forgot what was supposed to go in each input. The user will be confused without labels if they make a mistake which could mean they enter a recipe in the notes column or vice versa.</td>
+            <td>4</td>
+            <td>Label the fields on the Add/Edit Entry pages.This way users will know what to enter into the fields in case they delete all the contents.</td>
+          </tr>
+          <tr>
+            <td>Creating a dish with the same name as an existing dish doesn’t display properly­ it results in two identical dishes. There is also nothing to warn me that I may have that dish already.</td>
+            <td>3</td>
+            <td>Fix error so that Dishes can be added with a title of an existing dish. We expect user wouldn't mind having two dishes of the same name, but would mind getting error messages indicating similar titles.</td>
+          </tr>
+          <tr>
+            <td>Nothing reminds me to save if I try to hit “back” after editing a recipe, thus losing my changes.</td>
+            <td>3</td>
+            <td>Add popup on Add/Edit Entry page to make sure people want to cancel, when they press the cancel/back button (the buttons on the bottom of the page). The popup will not appear if user selects back arrow (located at top of pages). The popups would remind user to save in case changes were made. In case where user selects back arrow, we decided users wouldn't want reminder, especially if they are just viewing the entries in the Edit page (The popups would just be irritating). </td>
+          </tr>
+          <tr>
+            <td>I don’t understand the point of having the entree/appetizer/ etc. categorization. It doesn’t seem to do anything, and I would assume that if you have the recipe open, you would know what kind of dish it was anyway.</td>
+            <td>2</td>
+            <td>Leave the categorization option. The original purpose was to allow users to search for Dishes based on category, but we were unable to implement the search option due to time constraints.</td>
+          </tr>
+          <tr>
+            <td>The “...” on “Other...” on the Create a Dish suggests to me a text input to enter my own preferences instead of selecting the string “Other...”.</td>
+            <td>2</td>
+            <td>Take out the "Other..." category and "Bread" category examples. This will be less confusing to users during user testing.</td>
+          </tr>
+          <tr>
+            <td>There is no rhyme or reason to how the recipes are ordered, making it hard to locate particular recipes, especially when there are a lot of them.</td>
+            <td>3</td>
+            <td>Make no change. We think it would be obvious to our users that the dishes are in reverse chronological order. (Our user testing showed users didn't really care about the date, so long as they knew the order they cooked the meals in)</td>
+          </tr>
+          <tr>
+            <td>No way to delete recipes</td>
+            <td>3</td>
+            <td>Make no change. Our users are unlikely to delete recipes (since meals that they would grow tired of would sit at the very bottom of the main page, and they wouldn't bother adding meals that they don't like).</td>
+          </tr>
+          <tr>
+            <td>“back” and “cancel” are essentially the same</td>
+            <td>0</td>
+            <td>Change the "Back" button at the bottom of the Edit Entry page to "Cancel" in order to be consistent with the "Cancel" button on the Add Entry page (they essentially do the same thing which is to go back to the main page)</td>
+          </tr>
+          <tr>
+            <td>When editing a dish, pushing the retake photo button brings me to the homepage.</td>
+            <td>2</td>
+            <td>Fix error so that the "retake photo button" retakes a photo instead of going to the homepage. The retake photo button should be acting like a retake photo button</td>
+          </tr>
+          <tr>
+            <td>On the addEntry page there is a button labeled Retake Photo. This is a little counterintuitive because I had not previously “taken” (selected) a photo.</td>
+            <td>1</td>
+            <td>Change the "Retake Photo" button to read "Take Photo"</td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+
+    
+  </div>
+<div id="loadJS"><!-- The javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/insertNav.js"></script>
+    <script src="../js/dropdown.js"></script>
+    <!-- Unused
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    <script src="js/transition.js"></script>
+    <script src="js/alert.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/scrollspy.js"></script>
+    <script src="js/tab.js"></script>
+    <script src="js/tooltip.js"></script>
+    <script src="js/popover.js"></script>
+    <script src="js/button.js"></script>
+    <script src="js/collapse.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/typeahead.js"></script>
+    <script src="js/affix.js"></script>
+    <script src="assets/js/holder/holder.js"></script>
+    <script src="assets/js/google-code-prettify/prettify.js"></script>
+    <script src="assets/js/application.js"></script>
+    -->
+</div>
+<!-- The javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../assets/js/jquery.js"></script>
+<script src="../assets/js/loadJS.js"></script>
+
+
+
+
+
+</body>
+</html>

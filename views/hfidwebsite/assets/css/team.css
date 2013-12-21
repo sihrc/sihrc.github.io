@@ -1,0 +1,23 @@
+.team-member {
+	height: 350px;
+	width: 100%;
+}
+.team-member-info {
+	float: left;
+	height: auto;
+	margin-left: 2%;
+	width: 63%;
+}
+.team-member-img {
+	height: auto;
+	float: left;
+	margin-top: 5px;
+	max-width: 235px;
+	width: 35%;
+}
+.team-member-img img {
+	height: auto;
+	margin-top: 20px;
+	max-width: 235px;
+	width: 100%;
+}

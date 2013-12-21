@@ -1,0 +1,24 @@
+.single-centered-option{
+  float: left;
+  margin: 10px 30% 20px;
+  width: 40%;
+}
+.single-centered-option img {
+  height: auto;
+  width: 100%;
+}
+.single-option{
+  float: left;
+  width: 33%;
+}
+.single-option img {
+  height: auto;
+  max-width: 250px;
+  width: 100%;
+}
+.three-options{
+  height: 550px;
+  margin: 10px 0;
+  position: relative;
+  width: 100%;
+}

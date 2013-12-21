@@ -1,0 +1,12 @@
+.synthesis-poster {
+	margin: 20px 5%;
+	text-align: center;
+	width: 90%;
+}
+.synthesis-poster img {
+	height: auto;
+	width: 100%
+}
+.text-section {
+	margin: 40px 0;
+}
