@@ -21,19 +21,6 @@ function getWindowHeight(){
 	return winH;
 }
 
-//Set the position of the footer
-function setBottomBar(){
-	//Projected Footer Position
-	var footerHeight = getWindowHeight() - $('#projects').height() - 74;
-	//Content Position
-	var profileHeight = $('#profile').height() + $('#profile').offset().top + 30;
-	//Choosing which to use
-	if (footerHeight > profileHeight)
-		$('#projects').offset({left:0,top:footerHeight});
-	else 
-		$('#projects').offset({left:0,top:profileHeight});
-}
-
 //Set Project Content
 function setProjectContent(){
 	var projectheight = $('#projects').offset().top + 60;
@@ -73,7 +60,6 @@ function positionLogos(){
 		var prevLogo = "#logo" + (i - 1);
 		var curLogo = "#logo" + i;
 		var nextOffset = $(prevLogo).offset().left + $(prevLogo).width() + 15;
-		//if ((nextOffset + $(curLogo).width()) > ($('#right-button').offset().left - 10)){
 		if (nextOffset > ($('#right-button').offset().left - 10)){
 			for (var n = i; n<= numLogos; n++){
 				$("#logo" + i).hide();	
@@ -92,13 +78,25 @@ function positionLogos(){
 	$('#block-left').height($('#logo1').height());
 }
 
+//Set the position of the footer
+function setBottomBar(){
+	//Projected Footer Position
+	var footerHeight = getWindowHeight() - $('#projects').height() - 74;
+	//Content Position
+	var profileHeight = $('#profile').height() + $('#profile').offset().top + 30;
+	//Choosing which to use
+	if (footerHeight > profileHeight)
+		$('#projects').offset({top:footerHeight});
+	else 
+		$('#projects').offset({top:profileHeight});
+}
+
 function centerMain(){
 	var offset = ($(window).width() - $('#holder').width())/2;
 	if (offset <= 0){
 		offset = 0;
 	}
 	$('#holder').offset({left:offset});
-	//$('#main').offset({top:($(window).height() - $('#main').height())/2});
 }
 
 //What to run when document is ready
@@ -108,8 +106,6 @@ $(window).ready(function(){
 	setProjectContent();
 	setHolder();
 	setProjectAnimation();
-/*	positionLogos();
-	setupLogoButtons();*/
 });
 
 $(window).resize(function(){
