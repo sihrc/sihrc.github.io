@@ -1,0 +1,72 @@
+/*
+Main.html CSS file
+Profile Section
+author: Chris Lee
+created: 10/27/2013
+*/
+
+/*Content Holder*/
+#main {
+	width:100%;
+	background-color:red;
+}
+/*Profile Holder*/
+#holder {
+	background-color:black;
+	position:absolute;
+	width:700px;
+	float:left;
+}
+
+/*Name*/
+h1.name {
+	text-align: center;
+	line-height: .01em;
+	font-size:60px;
+	font-family:"Raleway";
+}
+
+/*Dividor between Title and Body*/
+#dividor {
+	margin-left:auto;
+	margin-right:auto;
+	height:2px;
+	width:400px;
+	margin-bottom:20px;
+	background:#000000;
+}
+
+/*Center Body*/
+#body {
+	float:left;
+	width:300px;
+}
+
+/*Profile Picture*/
+#profile{
+	border-style:solid;
+	border-color:#000000;
+	border-width:5px;
+	width:100%;
+}
+
+/*Connect Panel*/
+#connect {
+	margin-right:20px;
+	float:left;
+}
+
+/*Connect Icons*/
+.icon {
+	width:90px;
+	height:auto;
+	z-index:1;
+}
+
+/*Bio Panel*/
+#bio {
+	line-height:2em;
+	float:left;
+	margin-left:35px;
+	font-family:"Quicksand";
+}

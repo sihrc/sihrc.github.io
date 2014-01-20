@@ -1,74 +1,17 @@
 /*
 Main.html CSS file
+Projects Section
 author: Chris Lee
-created: 10/27/2013
+created: 1/19/2014
 */
 
-/*Profile Holder*/
-#holder {
-	position:absolute;
-	width:700px;
-}
-
-/*Name*/
-h1.name {
-	text-align: center;
-	line-height: .01em;
-	font-size:60px;
-	font-family:"Raleway";
-}
-
-/*Dividor between Title and Body*/
-#dividor {
-	margin-left:auto;
-	margin-right:auto;
-	height:2px;
-	width:400px;
-	margin-bottom:20px;
-	background:#000000;
-}
-
-/*Center Body*/
-#body {
-	float:left;
-	width:300px;
-}
-
-/*Profile Picture*/
-#profile{
-	border-style:solid;
-	border-color:#000000;
-	border-width:5px;
-	width:100%;
-}
-
-/*Connect Panel*/
-#connect {
-	margin-right:20px;
-	float:left;
-}
-
-/*Connect Icons*/
-.icon {
-	width:90px;
-	height:auto;
-	z-index:1;
-}
-
-/*Bio Panel*/
-#bio {
-	line-height:2em;
-	float:left;
-	margin-left:35px;
-	font-family:"Quicksand";
-}
-
 /*Project Footer Bar*/
-#footerbar {
-	text-decoration: none;
-	height:50px;
+#footer {
 	left:0;
+	float:left;
+	height:50px;
 	width:100%;
+	text-decoration: none;
 	line-height: 1.75em;
 	clear:both;
 	position:absolute;
@@ -76,10 +19,11 @@ h1.name {
 	vertical-align: middle;
 	text-align: center;
 	font-family:"Raleway";
-	background:#000000;
-	color:#FFFFFF;
 	font-size: 20pt;
 	font-weight:bold;
+	background:#000000;
+	color:#FFFFFF;
+	margin:0;
 }
 
 /*Project Content*/
