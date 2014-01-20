@@ -5,14 +5,8 @@ author: Chris Lee
 created: 10/27/2013
 */
 
-/*Content Holder*/
-#main {
-	width:100%;
-	background-color:red;
-}
 /*Profile Holder*/
 #holder {
-	background-color:black;
 	position:absolute;
 	width:700px;
 	float:left;
