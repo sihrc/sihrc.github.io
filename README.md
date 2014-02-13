@@ -9,4 +9,4 @@ I'm interested in software development, project management, and design.
 I'm passionate about futhering technology to bring more meaning and value to people.
 
 Contact:
-	Contact me via email @ sihrc.c.lee@gmail.com
+	Contact me via email @ sihrc.c.lee @ gmail
