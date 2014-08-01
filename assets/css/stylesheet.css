@@ -94,6 +94,16 @@ header h2 {
   margin: 0 auto;
 }
 
+ul#navigation {
+    position: fixed;
+    margin: 0px;
+    padding: 0px;
+    top: 10px;
+    left: 0px;
+    list-style: none;
+    z-index:9999;
+}
+
 #container .inner img {
   max-width: 100%;
 }
