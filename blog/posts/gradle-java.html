@@ -1,0 +1,62 @@
+<h2> Building Java Projects and LWJGL </h2>
+
+I've been working on a <a href="https://github.com/pong-the-moba/play-pong-the-moba"> Pong Variant </a> with a friend. Building this project just got a whole lot harder when we decided to pack jars for play testing.
+<br><br>
+<h3> Using Gradle </h3>
+<blockquote>
+Gradle is build automation evolved. 
+</blockquote>
+<i>A little snippet from the site: </i>
+<br>
+<a href="http://www.gradle.org/">Gradle</a> can automate the building, testing, publishing, deployment and more of software packages or other types of projects such as generated static websites, generated documentation or indeed anything else. <br>
+<br>
+Luckily, we had migrated to Gradle early when I joined the team. Originally, we had nice old jars sitting in a libs library and some imported modules for libraries we made edits to... blehh<br><br>
+
+
+<h3> Getting started </h3>
+We need to get Gradle first! I think the easiest way to do this is to use <a href="http://www.jetbrains.com/idea/">Intellij</a>. Yes, Intellij IDEA works miracles in Java and Beyond. Using Intellij (which has Gradle plugged in), you can create a project using Gradle. 
+<br>
+<br>
+<img src="images/gradle-new-project.png"></img>
+<br> Resulting in: <br>
+<img src="images/gradle-post-new.png"></img>
+<pre><code class="language-java">
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'executable-jar'
+
+sourceCompatibility = 1.5
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+mainClass = 'server.PongServer'
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile 'com.esotericsoftware:kryonet:2.+'
+    compile project(':Link:Pong')
+    compile project(':jbox2d')
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.11'
+}
+
+jar {
+    baseName = 'pong-the-moba-server'
+    version = '0.1.0'
+    manifest {
+        attributes 'Main-Class': 'server.PongServer'
+    }
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'net.nisgits.gradle:gradle-executable-jar-plugin:1.7.0'
+    }
+}
+</code></pre>

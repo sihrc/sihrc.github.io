@@ -24,15 +24,19 @@
 $(function(){
 	var query = window.location.search.substring(1);
 	if (query == "") {
-		$('#mainContent').load("posts/main.html").fadeIn("slow");
+		$('#mainContent').load("posts/main.html", highlight).fadeIn("slow");
 	} else {
-		$('#mainContent').load("posts/" + query + ".html").fadeIn("slow");
+		$('#mainContent').load("posts/" + query + ".html", highlight).fadeIn("slow");
 	}
 });
 
 function swapContent(post) {
-	$('#mainContent').fadeOut("slow").hide().load("posts/" + post + ".html").fadeIn("slow");
+	$('#mainContent').fadeOut("slow").hide().load("posts/" + post + ".html", highlight).fadeIn("slow");
 	window.location.search.substring(1)
+}
+
+function highlight(){
+    Prism.highlightAll();
 }
 
 $(function() {
