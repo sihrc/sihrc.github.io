@@ -3,8 +3,8 @@
    License: none (public domain)
 */
 html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
+h1, h2, h3, h4, h5, h6, p, blockquote,
+a, abbr, acronym, address, big, cite,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
@@ -176,7 +176,7 @@ a.button span {
 }
 
 
-code, pre {
+/*code, pre {
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal;
   color: #222;
   margin-bottom: 30px;
@@ -201,7 +201,7 @@ pre code {
   background-color: #303030;
   border: none;
   padding: 0;
-}
+}*/
 
 ul, ol, dl {
   margin-bottom: 20px;
