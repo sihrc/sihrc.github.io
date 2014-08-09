@@ -18,14 +18,21 @@ We need to get Gradle first! I think the easiest way to do this is to use <a hre
 <br>
 <br>
 <img src="images/gradle-new-project.png"></img>
-<br> Resulting in: <br>
+<br> Resulting in: (I like checking the "Create directories for empty content roots automatically" because it makes it easier to see where you're supposed to put your code.)<br>
 <img src="images/gradle-post-new.png"></img>
-<pre><code class="language-java">
-apply plugin: 'java'
-apply plugin: 'maven'
+<br> Here's an example of our Pong Variant's Server Gradle build. </br>
+<pre style="height: 800px"><code class="language-java">
+//Java plugin, well because Java
+apply plugin: 'java' 
+
+//Executable-jar plugin - to pack our server into a nice jar. 
+//https://github.com/stigkj/gradle-executable-jar-plugin
 apply plugin: 'executable-jar'
 
-sourceCompatibility = 1.5
+//Java source compaitibility - JDK version 1.6 I suppose
+sourceCompatibility = 1.6
+
+//Project Version 
 version = '1.0'
 
 repositories {
