@@ -1,6 +1,6 @@
 <h2> Building Java Projects and LWJGL </h2>
 
-I've been working on a <a href="https://github.com/pong-the-moba/play-pong-the-moba"> Pong Variant </a> with a friend. Building this project just got a whole lot harder when we decided to pack jars for play testing.
+I've been working on a <a href="https://github.com/pong-the-moba/play-pong-the-moba"> Pong Variant </a> with a friend. Building this project became such an issue. Grabbing dependencies, setting classpaths, packing jars, etc... Here, we'll just go over Gradle in general.
 <br><br>
 <h3> Using Gradle </h3>
 <blockquote>
@@ -14,15 +14,14 @@ Luckily, we had migrated to Gradle early when I joined the team. Originally, we 
 
 
 <h3> Getting started </h3>
-We need to get Gradle first! I think the easiest way to do this is to use <a href="http://www.jetbrains.com/idea/">Intellij</a>. Yes, Intellij IDEA works miracles in Java and Beyond. Using Intellij (which has Gradle plugged in), you can create a project using Gradle. 
+We need to get Gradle first! I think the easiest way to do this is to use <a href="http://www.jetbrains.com/idea/">Intellij</a>. Yes, Intellij IDEA does indeed "work miracles in Java and Beyond". Using Intellij (which has Gradle plugged in), you can create a project using Gradle. 
 <br>
 <br>
 <img src="images/gradle-new-project.png"></img>
 <br> Resulting in: (I like checking the "Create directories for empty content roots automatically" because it makes it easier to see where you're supposed to put your code.)<br>
 <img src="images/gradle-post-new.png"></img>
-<br> Here's an example of our Pong Variant's Server Gradle build. </br>
-<pre style="height: 800px"><code class="language-java">
-//Java plugin, well because Java
+<br> Here's an example of our Pong Variant's Server Gradle build. Found <a href="https://github.com/Pong-The-Moba/Pong-Server">here</a>. </br>
+<pre style="height: 800px"><code class="language-java">//Java plugin, well because Java
 apply plugin: 'java' 
 
 //Executable-jar plugin - to pack our server into a nice jar. 
@@ -35,29 +34,42 @@ sourceCompatibility = 1.6
 //Project Version 
 version = '1.0'
 
+//Where to look for repositories! 
 repositories {
-    mavenCentral()
-}
-mainClass = 'server.PongServer'
-dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.11'
-    compile 'com.esotericsoftware:kryonet:2.+'
-    compile project(':Link:Pong')
-    compile project(':jbox2d')
+    mavenCentral() //Maven? Yes, please.
 }
 
+//main class definition. Yes, this is our main class
+mainClass = 'server.PongServer'
+
+//Dependencies! 
+//Note :{dir} indicates /{dir} to locate modules to be compiled with our project! 
+dependencies {
+    //Yum, dependency for our test package.
+    testCompile group: 'junit', name: 'junit', version: '4.11' 
+    //Kryonet our server connection backend! We're getting from maven
+    compile 'com.esotericsoftware:kryonet:2.+'                 
+    //Link-Pong Module! our core files shared between server and client
+    compile project(':Link:Pong')                              
+    //jBox2D - our endearing little physics engine...
+    compile project(':jbox2d')                                 
+}
+
+//For our gradle wrapper packaged in our git repository! Yep, ship gradle with your project. Put it in your VCS! 
 task wrapper(type: Wrapper) {
     gradleVersion = '1.11'
 }
 
+//For our Jar Building
 jar {
     baseName = 'pong-the-moba-server'
     version = '0.1.0'
-    manifest {
+    manifest { //Oh yes our main class again.
         attributes 'Main-Class': 'server.PongServer'
     }
 }
 
+//build script! 
 buildscript {
     repositories {
         mavenCentral()
@@ -67,3 +79,9 @@ buildscript {
     }
 }
 </code></pre>
+A couple of things to take note of. For module dependencies like :Link:Pong, we need to include a build.gradle file and a settings.gradle if it's a project. Speaking of settings.gradle, any module dependencies need to be included in settings.gradle for gradle to find them, like so: <br>
+<pre><code class="language-java">include ':Server'
+include ':Link:Pong'
+include ':jbox2d'
+</code></pre>
+And for maven repositories, you can usually find them <a href="http://mvnrepository.com/artifact/org.jbox2d/jbox2d/2.1.2.2">here</a>, and they usually have a gradle tab that shows you what to put in the dependency block. I'm still very much a novice at Gradle, so if you have any corrections to make to this post ... please let me know! I'll be adding a contact me section at some point .. but for now - my contact information can be obtained from my website somewhere (sorry).
