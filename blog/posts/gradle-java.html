@@ -1,4 +1,4 @@
-<h2> Building Java Projects and LWJGL </h2>
+<h2> Building Java Projects</h2>
 
 I've been working on a <a href="https://github.com/pong-the-moba/play-pong-the-moba"> Pong Variant </a> with a friend. Building this project became such an issue. Grabbing dependencies, setting classpaths, packing jars, etc... Here, we'll just go over Gradle in general.
 <br><br>
@@ -21,7 +21,7 @@ We need to get Gradle first! I think the easiest way to do this is to use <a hre
 <br> Resulting in: (I like checking the "Create directories for empty content roots automatically" because it makes it easier to see where you're supposed to put your code.)<br>
 <img src="images/gradle-post-new.png"></img>
 <br> Here's an example of our Pong Variant's Server Gradle build. Found <a href="https://github.com/Pong-The-Moba/Pong-Server">here</a>. </br>
-<pre style="height: 800px"><code class="language-java">//Java plugin, well because Java
+<pre><code class="language-java">//Java plugin, well because Java
 apply plugin: 'java' 
 
 //Executable-jar plugin - to pack our server into a nice jar. 

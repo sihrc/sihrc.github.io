@@ -32,3 +32,10 @@
 #expList .expanded {
     background-image: url(../img/expanded.png);
 }
+
+.blog_pic {
+    display: block;
+    width: 300px;
+    margin-left: auto;
+    margin-right:auto
+}

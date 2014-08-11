@@ -1,0 +1,45 @@
+<h2> Getting Started in Android&trade; </h2>
+<h3> Android Studio </h3>
+First, let's download the Integrated Development Environment (<a href="http://en.wikipedia.org/wiki/Integrated_development_environment">IDE</a>) for this course, <a href="https://developer.android.com/sdk/installing/studio.html">Android Studio</a>.
+
+<br>
+<img class="blog_pic" src="images/android_studio.png">
+
+<br>
+Android Studio is a fairly new IDE branched off from <a href="http://www.jetbrains.com/idea/">Intellij IDEA</a>. It comes with several tools to help us easily create and deploy Android projects. Some of these tools include the SDK Manager, Gradle, Layout Editer, and VCS support. We will be using these throughout the course. 
+
+<br><br>
+
+<h3> SDK Manager </h3>
+Once you've gotten Android Studio running, we'll need to install the development kits necessary for Android development. Take a look <a href="https://developer.android.com/tools/help/sdk-manager.html">here</a> and grab the latest version. 
+
+<br><br>
+
+<h3> Hello World </h3>
+Let's get started with a simple Hello World. We won't be using much java this time around to give those who are unfamiliar with Java a chance to get more comfortable. 
+
+<br><br>
+
+We'll be working with XML for this tutorial. Android uses XML for static layout resources. These layout resources determine content, layout, and styles for the user interface of your Android application. Although you can change the content/layout/styles dynamically in the Java code, having statically defined resources allows user interface changes without having to recompile the java code (this saves a lot of time in the long run when dealing with minor UI tweaks).
+
+<br><br>
+
+<h3>Creating the Project </h3>
+We will need to create a new project using the Gradle Build System that comes with Android Studio. Gradle will make your life easier when it comes to building and managing an Android application. For more information, feel free to browse the <a href="http://www.gradle.org" target="_blank">Gradle</a> website or this <a href="http://localhost/sihrc.github.io/blog/blog.html?gradle-java" target="_blank">post</a> (uses Intellij IDEA so the steps will look different).
+
+<br><br>
+<h4>Select create a new project: </h4>
+<img src="images/new_project_1.png">
+<br><br>
+<h4>Give the application a name and company domain</h4>
+<img src="images/new_project_2.png">
+<br>
+Application name is just whatever this application is called. (HelloWorld is good) Company domain is like a unique identifier for your application. Similar to how website have a domain ... i.e. drive.google.com  -  In this case "google.com" is the domain and "drive" is the application. In Android applications, things are backwards. In your case, you can probably just put com.{github hook} for your domain (or whatever pleases you).
+
+<h4>Select devices to support</h4>
+<img src="images/new_project_3.png">
+<br>
+<br>
+<h3>Main Activity </h3>
+Activities are essentially states of an android application. When the app is first opened, the application's 'Main Activity' is run. The activities control the lifecycle of the application. We'll leave it at that for now, but you can take a look at the Android's Developers' <a href="http://developer.android.com/guide/components/activities.html">page</a> for more information. 
+
