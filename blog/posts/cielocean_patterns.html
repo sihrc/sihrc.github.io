@@ -1,0 +1,133 @@
+<h2> Patterns Web-Scraping </h2>
+
+<blockquote>
+cielocean/book_evaluate.py
+</blockquote>
+<h3> </h3>
+
+<pre><code class="language-python">
+
+"""
+Evaluate the change in sentiment of each chapter of the book
+"""
+
+from pattern.en import*
+import re
+import matplotlib.pyplot as plt
+
+emma = open('emma.txt','r')
+sns = open('sense_and_sensibility.txt','r')
+ot = open('oliver_twist.txt','r')
+je = open('jane_eyre.txt','r')
+</code></pre>
+<h3> Take a look at using with blocks. They do file opening cleaner by closing the file automatically once it leaves the scope of the with block. </h3>
+<pre><code class="language-python">
+
+
+def format_text(text):
+    """
+    input text file with type file
+    return list of chapters of list of sentences
+    """
+    def file2str(file):
+        """
+        input text file with type file
+        convert text file to str
+        return text file with type str
+        """
+        strfile=file.read()
+        return strfile
+    </code></pre>
+    <h3> Usually, you do not declare functions inside other functions unless the functions are different (based on an argument of its parent function) everytime. Otherwise, it's best to leave them outside, so you don't have to remake the function everytime you run its parent function. </h3>
+    <pre><code class="language-python">
+    #def lowercase(text):
+    #   return text.lower()
+
+    def split_chapter(text):
+        return text.split('CHAPTER')
+
+    def get_sentences(text):
+        """
+        input a text file in str
+        convert text (str) to list
+        return list of sentences (str)
+        """
+        return re.split(r'\s*[!?.]\s*',text)
+
+    def rm_n(L):
+        """
+        input list of sentences
+        remove \n from sentences in a list
+        return list of sentences without \n
+        """
+        newL=[]
+        for string in L:
+            newL.append(string.replace('\n',' ').replace('\r',' '))
+        return newL
+
+    formatted_text=[]
+    #for chapter in split_chapter(lowercase(file2str(text))):
+    #   formatted_text.append(rm_n(get_sentences(chapter)))
+    </code></pre>
+<h3> Bleh. Unused commented out code :( </h3>
+<pre><code class="language-python">
+    for chapter in split_chapter(file2str(text)):
+        formatted_text.append(rm_n(get_sentences(chapter)))
+
+    return formatted_text
+
+def sentiment_lvls(L):
+    """
+    Input list of sentences
+    Return list of sentiment levels
+    """
+    def sentiment_lvl_1(sentence):
+        """
+        input 1 sentence (str)
+        evaluate sentiment level
+        return (positive sentiment polarity, subjectivity of sentence) of the sentence
+        """
+        return sentiment(sentence)
+
+    L_sentiment=[]
+    L_sentiment_chp=[]
+    for chapter in L:
+        for sentence in chapter:
+            L_sentiment_chp.append(sentiment_lvl_1(sentence))
+        L_sentiment.append(L_sentiment_chp)
+    return L_sentiment
+
+def filter(L):
+    """
+    remove list element with subjectivity of sentence=0
+    return new list
+    """
+    </code></pre>
+<h3> Maybe consider not adding the sentiment to begin with instead of filtering after the fact. </h3>
+<pre><code class="language-python">
+    L_sentiment=[]
+    L_sentiment_chp=[]
+    for chp in L:
+        for sentimentlvl in chp:
+            if sentimentlvl[1]!=0:
+                L_sentiment_chp.append(sentimentlvl[0])
+        avg_sentiment=float(sum(L_sentiment_chp))/len(L_sentiment_chp) #average sentiment value for each chapter
+        L_sentiment.append(avg_sentiment)
+    return L_sentiment #List
+
+def plot(L):
+    """
+    input list of values
+    plot graph values
+    """
+
+    x=filter(L)
+    plt.xlabel('Chapter')
+    plt.ylabel('Sentiment Level')
+
+    plt.plot(list(range(len(x))),x)
+    plt.show()
+
+plot(sentiment_lvls(format_text(emma)))
+</code></pre>
+<h3> It's good practice to run script in if __name__ == "__main__": blocks</h3>

@@ -1,0 +1,91 @@
+<h2> Text Mining Mini Project </h2>
+
+<blockquote>
+ziyilan/data_processing.py
+</blockquote>
+<h3> This doesn't seem to be within the scope of the project. Your results don't rely on anything but built in functionality of the patterns library. The text fetching done is also fairly hard-coded. Keep your code DRY (Don't Repeat Yourself) - these are standard coding practices that you should follow since code isn't only for your own eyes only. I would recommend you think about this project more and try to go further with the project. If you turn it in again, you can redeem some of the points lost.</h3>
+<pre><code class="language-python">
+import Data_Fetching
+import pickle
+from pattern.en import *
+
+#------------------------------------------------------------------------------------------
+# Load data from a file (will be part of your data processing script)
+input_file = open('dickens_texts.pickle','r')
+reloaded_copy_of_texts = pickle.load(input_file)
+
+#------------------------------------------------------------------------------------------
+#This is the function that count the top 30 words in the text.
+
+# def countWordFrequency(content):
+#    myDict = {}
+#    listWords = content.split(" ")
+#    for w in listWords:
+#       if (myDict.has_key(w)):
+#          myDict[w] = myDict[w] + 1
+#       else:
+#          myDict[w] = 1
+#    return myDict
+
+# freq = countWordFrequency(reloaded_copy_of_texts[0])
+# topfreq = sorted(freq.iteritems(), key=lambda x:-x[1])[:30]
+# for x in topfreq:
+#     print "{0}: {1}".format(*x)
+
+#---------------------------------------------------------------------------------------------
+# This sectoin prints out the sentimental level each text.
+
+print sentiment(reloaded_copy_of_texts[0])
+print sentiment(reloaded_copy_of_texts[1])
+print sentiment(reloaded_copy_of_texts[2])
+print sentiment(reloaded_copy_of_texts[3])
+print sentiment(reloaded_copy_of_texts[4])
+
+</code></pre>
+<pre><code class="language-python">
+from pattern.web import *
+import pickle
+
+#----------------------------------------------------------------------------------------------------------------------------------
+#import books chosen from Gutenberg database
+
+oliver_twist_full_text = URL('http://gutenberg.pglaf.org/7/3/730/730.txt').download()
+indexone=oliver_twist_full_text.find("*** START OF THIS PROJECT GUTENBERG EBOOK OLIVER TWIST ***")
+indextwo=oliver_twist_full_text.find("*** END OF THIS PROJECT GUTENBERG EBOOK OLIVER TWIST ***")
+oliver_twist=oliver_twist_full_text[indexone:indextwo]
+
+great_expectation_full_text = URL('http://gutenberg.pglaf.org/1/4/0/1400/1400.txt').download()
+indexthree=great_expectation_full_text.find("*** START OF THIS PROJECT GUTENBERG EBOOK GREAT EXPECTATIONS ***")
+indexfour=great_expectation_full_text.find("*** END OF THIS PROJECT GUTENBERG EBOOK GREAT EXPECTATIONS ***")
+great_expectation=great_expectation_full_text[indexthree:indexfour]
+
+
+David_Copperfield_full_text = URL('http://gutenberg.pglaf.org/7/6/766/766.txt').download()
+indexfive=David_Copperfield_full_text.find("*** START OF THIS PROJECT GUTENBERG EBOOK DAVID COPPERFIELD ***")
+indexsix=David_Copperfield_full_text.find("*** END OF THIS PROJECT GUTENBERG EBOOK DAVID COPPERFIELD ***")
+David_Copperfield=David_Copperfield_full_text[indexfive:indexsix]
+
+
+Bleak_House_full_text = URL('http://gutenberg.pglaf.org/1/0/2/1023/1023.txt').download()
+indexseven=Bleak_House_full_text.find("***START OF THE PROJECT GUTENBERG EBOOK BLEAK HOUSE***")
+indexeight=Bleak_House_full_text.find("***END OF THE PROJECT GUTENBERG EBOOK BLEAK HOUSE***")
+Bleak_House=Bleak_House_full_text[indexseven:indexeight]
+
+
+A_TALE_OF_TWO_CITIES_full_text = URL('http://gutenberg.pglaf.org/9/98/98.txt').download()
+indexnine=A_TALE_OF_TWO_CITIES_full_text.find("*** START OF THIS PROJECT GUTENBERG EBOOK A TALE OF TWO CITIES ***")
+indexten=A_TALE_OF_TWO_CITIES_full_text.find("*** END OF THIS PROJECT GUTENBERG EBOOK A TALE OF TWO CITIES ***")
+A_TALE_OF_TWO_CITIES=A_TALE_OF_TWO_CITIES_full_text[indexnine:indexten]
+
+#----------------------------------------------------------------------------------------------------------------------------------
+
+
+charles_dickens_texts=[oliver_twist,great_expectation,David_Copperfield,Bleak_House,A_TALE_OF_TWO_CITIES]
+
+
+
+f = open('dickens_texts.pickle','w')
+pickle.dump(charles_dickens_texts,f)
+f.close()
+
+</code></pre>
