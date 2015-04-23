@@ -1,0 +1,60 @@
+<h2> Patterns Web-Scraping </h2>
+
+<blockquote>
+thecardkid/popularity_test.py
+</blockquote>
+<h3>
+Great job. The scope of this assignment might be a little too narrow. Doesn't seem like you've done anything really interesting with the results. Perhaps, a good direction to go is some kind of visualization of the data, or seeing these trends over time and correlating them with other things that happened during the time. I'm glad you added docstrings. Please see my comments below.
+</h3>
+
+<pre><code class="language-python">
+from pattern.web import *
+from pattern.en import *
+import re
+
+fb = Facebook()
+
+def get_sentiments(thing_id):
+    """Given a Facebook ID, the function locates the page, looks through the
+    most recent posts and finds all the comments. It then analyses the comments
+    and returns the average sentiment and objectivity values."""
+    count, sum_sentiment, sum_objectivity = 0, 0, 0
+    news = fb.search(thing_id, type=NEWS, count=10000)
+    for post in news:
+        for comment in fb.search(post.id, type=COMMENTS):
+            sum_sentiment += sentiment(comment.text)[0]
+            sum_objectivity += sentiment(comment.text)[1]
+</code></pre>
+<br>
+<h4> Does this mean you're running sentiment on the same text twice? Why not just save the result</h4>
+</br>
+<pre><code class="language-python">
+            count += 1
+    if count:
+        return (sum_sentiment/float(count), sum_objectivity/float(count))
+    else:
+        return 'NA'
+
+phones = ['OnePlusSmartPhone','iPhone.page','Nexus6Fans','S.Note4','HtcFlagships']
+
+def analyse(array):
+    """Accepts an array of Facebook page names. Searches for the corresponding
+    Facebook ID, and passes each ID to get_sentiments() and stores the results
+    in a dictionary of format {"item": (avg. sentiment, avg. objectivity)}"""
+    expr = r'^{"id":"([0-9]{8,30})"'
+    results = {}
+    for thing in array:
+        text = URL("https://graph.facebook.com/" + thing).download()
+        thing_id = int(re.search(expr,text).group(1))
+        results[thing] = get_sentiments(thing_id)
+        print thing + ': ' + str(results[thing][0]) + ', ' + str(results[thing][1])
+</code></pre>
+<br>
+<h4> Ideally, you should store the results and save them to file somewhere. </h4>
+</br>
+<pre><code class="language-python">
+    return results
+
+analyse(phones)
+</code></pre>
+<h3> It's good practice to run script in if __name__ == "__main__": blocks</h3>
