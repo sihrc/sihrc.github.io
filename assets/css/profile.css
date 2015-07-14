@@ -53,7 +53,7 @@ h1.name {
 /*Connect Icons*/
 .icon {
 	width:90px;
-	height:auto;
+	height:90px;
 	z-index:1;
 }
 
@@ -84,4 +84,3 @@ h1.name {
   color:#FFFFFF;
   margin:0;
 }
-
